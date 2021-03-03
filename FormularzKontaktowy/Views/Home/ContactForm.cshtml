@@ -1,0 +1,35 @@
+﻿@model FormularzKontaktowy.Models.Client
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ContactForm</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <p>Imie i nazwisko: @Html.TextBoxFor(x => x.Name)</p>
+            <p>Twój e-mail: @Html.TextBoxFor(x => x.Email)</p>
+            <p>Twój adres: @Html.TextBoxFor(x => x.Address)</p>
+            <p>Twój telefon: @Html.TextBoxFor(x => x.Phone)</p>
+            <p>
+                Czy twoje zgłoszenie jest pilne?
+                @Html.DropDownListFor(x => x.Urgent,
+               new[]
+               {
+                   new SelectListItem() {Text="Tak", Value = bool.TrueString},
+                   new SelectListItem() {Text="Nie", Value = bool.FalseString }
+               },
+               "Wybierz opcję")
+            </p>
+            <input type="submit" value="Wyslij zgłoszenie"/>
+        }
+    </div>
+</body>
+</html>

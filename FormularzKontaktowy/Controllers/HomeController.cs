@@ -11,7 +11,17 @@ namespace FormularzKontaktowy.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 17 ? "Dzień dobry" : "Dobry wieczór";
             return View();
         }
+
+        public ViewResult ContactForm() 
+        {
+            return View();
+        }
+
+
+
     }
 }
