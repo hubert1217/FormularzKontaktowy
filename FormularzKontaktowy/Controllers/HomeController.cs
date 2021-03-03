@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormularzKontaktowy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,9 +17,16 @@ namespace FormularzKontaktowy.Controllers
             return View();
         }
 
-        public ViewResult ContactForm() 
+        [HttpGet]
+        public ViewResult ContactForm()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public ViewResult ContactForm(Client client) 
+        {
+            return View("Thanks", client);
         }
 
 

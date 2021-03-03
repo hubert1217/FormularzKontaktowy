@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div> 
+        <h1>Dziekujemy, @Model.Name!</h1>
+        @if (Model.Urgent == true)
+        {
+            @:@Model.Name, zapisalismy twoje zgłoszenie jako pilne!
+        }
+        else 
+        { 
+            @:@Model.Name, zapisaliśmy twoje zgłoszenie jako zwykłe.
+        }
+    </div>
+</body>
+</html>
