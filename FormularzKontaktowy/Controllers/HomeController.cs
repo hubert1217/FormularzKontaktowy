@@ -26,7 +26,16 @@ namespace FormularzKontaktowy.Controllers
         [HttpPost]
         public ViewResult ContactForm(Client client) 
         {
-            return View("Thanks", client);
+
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", client);
+            }
+            else 
+            {
+                return View();
+            }
+            
         }
 
 
