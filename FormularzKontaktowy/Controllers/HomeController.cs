@@ -1,4 +1,5 @@
-﻿using FormularzKontaktowy.Models;
+﻿using FormularzKontaktowy.DAL;
+using FormularzKontaktowy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace FormularzKontaktowy.Controllers
 {
     public class HomeController : Controller
     {
+
+        private EFDBContext db = new EFDBContext();
+
         // GET: Home
         public ActionResult Index()
         {
@@ -29,6 +33,8 @@ namespace FormularzKontaktowy.Controllers
 
             if (ModelState.IsValid)
             {
+                db.Clients.Add(client);
+                db.SaveChanges();
                 return View("Thanks", client);
             }
             else 

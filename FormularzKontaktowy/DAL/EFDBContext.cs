@@ -10,7 +10,7 @@ namespace FormularzKontaktowy.DAL
 {
     public class EFDBContext : DbContext
     {
-        public EFDBContext() : base("FormularzKontaktowy")
+        public EFDBContext() : base("EFDBContext")
         { 
             
         }
