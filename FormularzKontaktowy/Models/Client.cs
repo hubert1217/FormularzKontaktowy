@@ -8,6 +8,8 @@ namespace FormularzKontaktowy.Models
 {
     public class Client
     {
+
+        public int ID { set; get; }
         [Required(ErrorMessage = "Prosze podac swoje imię i nazwisko.")]
         public string Name { set; get; }
         [Required(ErrorMessage ="Prosze podac adres e-mail.")]
